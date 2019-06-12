@@ -115,10 +115,12 @@ Currently I have not adapted the Firefox theme to the new build system. This wil
 
 ## Screenshots
 
-![Teal_40](https://github.com/NikkNakk/Brightwork/blob/master/teal_40_screenshot.png?raw=true)
-![Teal Shades](https://github.com/NikkNakk/Brightwork/blob/master/shades_of_teal_screenshot.png?raw=true)
-![Dusk_60](https://github.com/NikkNakk/Brightwork/blob/master/dusk_60_screenshot.png?raw=true)
-![Varieties](https://github.com/NikkNakk/Brightwork/blob/master/variety_screenshot_old.png?raw=true)
+![Teal_40](https://github.com/NikkNakk/Brightwork-theme/blob/master/teal_40_screenshot.png?raw=true)
+
+![Teal Shades](https://github.com/NikkNakk/Brightwork-theme/blob/master/shades_of_teal_screenshot.png?raw=true)
+
+![Dusk_60](https://github.com/NikkNakk/Brightwork-theme/blob/master/dusk_60_screenshot.png?raw=true)
+![Varieties](https://github.com/NikkNakk/Brightwork-theme/blob/master/variety_screenshot_old.png?raw=true)
 
 # Theme User Preferences
 All user preferences are currently handled in the ```_config.scss ``` file. This is a sass file that is parsed during install. 
@@ -145,7 +147,8 @@ All user preferences are currently handled in the ```_config.scss ``` file. This
         - Ex: ```$ps_shade: 20; ``` Sets a shade of 20 for the accent color.
   
  
- Color Palette:![image](https://github.com/NikkNakk/Brightwork/blob/master/Color_Palette.png?raw=true)
+ Color Palette:![image](https://github.com/NikkNakk/Brightwork-theme/blob/master/Color_Palette.png?raw=true)
+ 
  Palette is from [Mineral UI](https://mineral-ui.com/color). It only uses the color palette and not the Mineral UI guidelines.
 
 4. **Transparency:** 
