@@ -76,7 +76,7 @@ $dk_yellow: mix($pm_yellow, $black, 60%);
 //Text//
 $text: $black;
 $textfg: if($variant=='dark', $bg_lt, $bg_dk);
-$textbg: $bg_lt;
+$textbg: if($shade>30, $bg_lt, $bg_dk);
 $textdb: rgba($black, .27);
 
 //Bakgrounds//
