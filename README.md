@@ -1,5 +1,5 @@
 # Brightwork Theme
-**Version 0.01 (Public Test and Preview Version)**
+**Version 0.1.0 (Public Test and Preview Version)**
 
 ## Description: 
 Brightwork started as a personal theme. The original plan was to make a theme for my personal use, but after many people expressed their interest I began making a public version. This version is a public test or preview version based on my theme. This version has been converted from my original source to a cleaner theme structure and a more appropriate build system (meson). **This theme is still in development, and this is just a test or preview version for those interested.**
