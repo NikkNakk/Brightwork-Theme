@@ -11,6 +11,7 @@ Brightwork started as a personal theme. The original plan was to make a theme fo
      * [Dependencies](#Dependencies)
      * [Build and Install](#Build)
      * [Extras](#extra-install-information)
+     * [Screenshots](#screenshots)
 * [Customizing](#theme-user-preferences)
      * [Config File](#instructions-for--configscss)
 * [Community](#public-appearences-stuff)
@@ -111,6 +112,13 @@ To get the Budgie Panel like the screen shots, in Budgie Settings set the bottom
 ### Firefox 
 
 Currently I have not adapted the Firefox theme to the new build system. This will be included during a future release.
+
+## Screenshots
+
+![Teal_40](https://github.com/NikkNakk/Brightwork/blob/master/teal_40_screenshot.png?raw=true)
+![Teal Shades](https://github.com/NikkNakk/Brightwork/blob/master/shades_of_teal_screenshot.png?raw=true)
+![Dusk_60](https://github.com/NikkNakk/Brightwork/blob/master/dusk_60_screenshot.png?raw=true)
+![Varieties](https://github.com/NikkNakk/Brightwork/blob/master/variety_screenshot_old.png?raw=true)
 
 # Theme User Preferences
 All user preferences are currently handled in the ```_config.scss ``` file. This is a sass file that is parsed during install. 
