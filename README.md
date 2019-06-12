@@ -110,7 +110,7 @@ To get the Budgie Panel like the screen shots, in Budgie Settings set the bottom
 
 ### Firefox 
 
-Currently I have not adapted the Firefox theme to the new build system. The theme files are included, but are older versions. I will update those files on a future release. 
+Currently I have not adapted the Firefox theme to the new build system. This will be included during a future release.
 
 # Theme User Preferences
 All user preferences are currently handled in the ```_config.scss ``` file. This is a sass file that is parsed during install. 
