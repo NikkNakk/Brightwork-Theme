@@ -93,7 +93,7 @@ sudo ninja render install
 ```
 * *Be patient as the render command will take around a minute or two to complete. I plan on replacing this with a progress bar or something* *
 
-**Note:** You do not have to pass the render command if you do not change colors and want to change another property or are testing something else. You can simply just run:
+**Note:** You have to run the render command for the initial install. After that, you only have to run it if you change colors. If you do not change colors, you can install other changes much quicker with:
 ```
 sudo ninja install
 ```
