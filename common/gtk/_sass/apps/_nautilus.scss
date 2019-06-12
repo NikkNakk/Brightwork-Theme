@@ -1,0 +1,120 @@
+//////////////
+/* Nautilus */
+//////////////
+
+
+.nautilus-window {
+
+    popover {
+        color: $textbg;
+    }
+
+    notebook {
+        border-radius: $incorner;
+        margin-right: 10px;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        background-color: $pm_cool;
+
+        stack {
+            background-color: $bg_view;
+            border-radius: $incorner;
+            margin:0 0 0 0px;
+        }
+
+        tabs {
+            background-color: $pm_cool;
+            border-radius: $incorner $incorner 0 0;
+            padding: 0 $pad;
+            color: $textfg;
+            margin-top: 0px;
+
+            >tab {
+                padding: $pad;
+                padding-top: 0px;
+                border-radius: $incorner $incorner 0 0;
+                margin-top: 0px;
+                margin-right: 6px;
+                margin-left: 6px;
+                margin-bottom: 0px;
+                color: $textfg;
+
+                image {
+                    margin-top: 3px;
+                }
+
+            }
+
+            >tab {
+
+                &:checked {
+                    background-image: radial-gradient(circle 8px at 0 73.5%, $pm_cool 90%, $bg_view 100%, transparent), radial-gradient(circle 8px at 100% 73.5%, $pm_cool 91%, $bg_view 100%, transparent);
+                    background-color: $bg_view;
+                    box-shadow: inset 0 20 0 0 $pm_cool;
+                    border-style: inset solid;
+                    border-top-width: 8px;
+                    border-color: $pm_cool;
+
+                    >box {
+                        background-color: $bg_view;
+                        margin-top: 0px;
+                        margin-left: 3px;
+                        margin-right: 3px;
+                        border-radius: 8px 8px 0 0;
+                        padding: 4px;
+                        margin-bottom: 0px;
+                    }
+                }
+
+                &:not(:checked) {
+                    border-style: inset solid;
+                    border-top-width: 8px;
+                    border-color: transparent;
+                    color: $textfg;
+
+                    >box {
+                        margin-top: 0px;
+                        margin-left: 3px;
+                        margin-right: 3px;
+                        border-radius: 8px 8px 0 0;
+                        padding: 4px;
+                        margin-bottom: 0px;
+                    }
+
+                    &:hover {
+                        color: $ps_color;
+                    }
+                }
+            }
+        }
+    }
+
+   
+
+    scrolledwindow {
+        border-width: 5px;
+        background-color: transparent;
+    }
+}
+
+.floating-bar {
+    color: $textfg;
+}
+
+.sidebar list {
+    color: $textbg;
+
+    image {
+        color: $textbg;
+    }
+}
+
+.nautilus-canvas-item.dim-label,
+.nautilus-list-dim-label {
+    color: $text;
+}
+
+.nautilus-desktop.nautilus-canvas-item {
+    color: $text;
+
+}

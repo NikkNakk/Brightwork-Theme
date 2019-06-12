@@ -1,0 +1,22 @@
+// When color definition differs for dark and light variant,
+// it gets @if ed depending on $variant
+$variant: 'light';
+
+@import '../_sass/palette';
+@import '../_sass/colors';
+
+
+
+
+@define-color pm=#{$pm_color}
+
+@define-color pmwarm=#{$pm_warm}
+
+@define-color pmred=#{$pm_red}
+
+@define-color pmblue=#{$pm_blue}
+
+@define-color pmyellow=#{$pm_yellow}
+
+@define-color pmgreen=#{$pm_green}
+

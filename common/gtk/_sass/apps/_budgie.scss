@@ -1,0 +1,518 @@
+//////////////////
+/* Budgie Panel */
+//////////////////
+
+%region {
+    border-radius: 26px;
+    padding: 0 10px;
+    margin-bottom: 4px;
+    margin-top: 0px;
+}
+
+
+.budgie-panel {
+
+    &.background {
+        border-radius: 0px;
+    }
+
+    &:backdrop {
+        background-color: $bg_color;
+    }
+
+    &.transparent {
+        background-color: transparent;
+
+        .start-region,
+        .end-region {
+            background-color: $bg_color;
+        }
+    }
+
+    .start-region {
+
+        @extend %region;
+        margin-left: 5px;
+
+        .icon-tasklist {
+
+            image {
+                margin: 4px 8px;
+                border-radius: 40%;
+                min-height: 16px;
+                min-width: 16px;
+                background-color: rgba($black, 0.27);
+            }
+
+            .running {
+
+                image {
+                    background-color: rgba($ps_cool, 0.27);
+                }
+
+                &:checked {
+                    image {
+                        background-color: rgba($ps_warm, 0.5);
+                    }
+                }
+            }
+        }
+    }
+
+    .center-region {
+        @extend %region;
+        background-color: transparent;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .end-region {
+
+        @extend %region;
+        margin-right: 5px;
+    }
+
+
+
+    button {
+        border-radius: 40%;
+
+        &.icon {
+            box-shadow: inset 0px 0px 1px 1px rgba($bg_cool, .6);
+        }
+
+        &.budgie-menu-launcher:hover {
+            background-color: transparent;
+            box-shadow: none;
+
+            box image {
+                color: transparent;
+            }
+        }
+
+        &.budgie-menu-launcher:checked {
+            background-color: transparent;
+            box-shadow: none;
+        }
+    }
+}
+
+////////////////////////////////////
+/* Budgie Panel Menu and Popovers */
+////////////////////////////////////
+
+.budgie-popover image {
+    padding: 5px;
+}
+
+.budgie-popover {
+
+    &.background {
+        border-radius: $incorner;
+    }
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.3);
+    border-radius: $corner;
+    box-shadow: $shadow;
+    background-color: $pm_warm;
+    color: rgba($textbg, 0.6);
+
+    &.background {
+        background-color: $pm_warm;
+        border-style: solid;
+        border-width: 0px;
+    }
+
+    border {
+        border: none;
+    }
+
+    list {
+        background-color: transparent;
+    }
+
+    row {
+        padding: 0;
+
+        &:hover {
+            box-shadow: none;
+        }
+    }
+
+    button.flat:not(.image-button) {
+        
+        padding: 0 8px;
+        color: $textbg;
+        font-weight: normal;
+
+        &:disabled {
+            color: $textdb;
+        }
+    }
+
+    &.budgie-menu {
+        color: rgba($textbg, 0.6);
+        border-color: $pm_warm;
+        border-radius: $corner $corner $corner 10px;
+
+        &.background {
+            background-color: rgba($pm_warm, 0.97);
+            margin: 0px;
+            border-radius: $corner $corner $corner 5px;
+        }
+
+        .container {
+            padding: 0px;
+            margin: 5px;
+            border-radius: $incorner $incorner $incorner 5px;
+        }
+
+        .sidebar {
+            border-radius: $incorner 0px 0px $incorner;
+            background-color: transparent;
+            margin-left: 5px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            margin-right: 5px;
+            padding: 0px;
+            font-size: 120%;
+
+            button {
+                margin: 5px;
+            }
+        }
+
+        entry {
+            border-style: solid;
+            border-width: 0px;
+            border-color: $pm_color;
+        }
+
+        scrollbar {
+            background-color: transparent;
+        }
+
+        entry.search {
+            box-shadow: none;
+            font-size: 120%;
+            margin-top: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
+            border-style: solid 2px;
+            border-color: #243947;
+            background-color: rgba($black, 0.27);
+            background-blend-mode: darken;
+            border-radius: $corner;
+            padding: 5px;
+        }
+
+        scrolledwindow {
+            background-color: rgba($black, 0.27);
+            border-radius: $incorner;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            padding: 5px;
+        }
+    }
+
+    &.user-menu {
+        .container {
+            padding: 8px;
+        }
+
+        separator {
+            margin: 4px 0;
+        }
+    }
+
+    &.sound-popover {
+        separator {
+            margin: 3px 0;
+        }
+    }
+
+    &.night-light-indicator {
+        .container {
+            padding: 8px;
+        }
+    }
+
+    &.user-menu {
+        .container {
+            padding: 8px;
+        }
+
+        separator {
+            margin: 4px 0;
+        }
+    }
+
+    &.sound-popover {
+        separator {
+            margin: 3px 0;
+        }
+    }
+
+    &.night-light-indicator {
+        .container {
+            padding: 8px;
+        }
+    }
+
+    &.places-menu {
+        .container {
+            padding: 8px;
+        }
+    }
+}
+
+//////////////
+/* Settings */
+/*  Window  */
+//////////////
+
+.budgie-settings-window headerbar {
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+
+.budgie-settings-window stack {
+    background-color: transparent;
+    border-radius: $incorner;
+    margin-bottom: 10px;
+    margin-right: 10px;
+
+    label {
+        color: $textfg;
+    }
+
+    combobox .csd {
+        background-color: transparent;
+    }
+
+    scrolledwindow {
+        background-color: $bg_view;
+        border-radius: $incorner;
+
+    }
+
+    box {
+        color: $textfg;
+    }
+
+    .linked box {
+        color: $white;
+    }
+
+}
+
+.budgie-settings-window scrolledwindow list {
+    color: $textbg;
+}
+
+.budgie-settings-window.csd>box {
+    background-color: transparent;
+    color: $textfg;
+
+    .linked {
+        color: $textbg;
+    }
+}
+
+.budgie-settings-window buttonbox.inline-toolbar {
+    border-style: none none solid;
+
+    button {
+        border-radius: $corner;
+
+
+    }
+}
+
+///////////////////
+/* Notifications */
+/*  and Dialogs  */
+///////////////////
+
+.budgie-notification-window {
+    background-color: transparent;
+    color: $textbg;
+    border-radius: $incorner;
+
+    .drop-shadow {
+        background-color: $bg_warm;
+    }
+}
+
+.budgie-notification {
+    .notification-title {
+        font-size: 110%;
+        color: $textbg;
+    }
+
+    .notification-body {
+        color: $textbg;
+    }
+
+    background-color: $bg_warm;
+    color: $textbg;
+}
+
+.budgie-osd-window {
+    @extend .budgie-notification-window;
+}
+
+.budgie-osd {
+    @extend .budgie-notification;
+
+    .budgie-osd-text {
+        font-size: 120%;
+    }
+}
+
+// Alt+tab
+.budgie-switcher-window {
+    background-color: transparent;
+
+    .drop-shadow {
+        margin: 8px 8px $incorner; 
+        border-radius: $corner;
+        background-color: $bg_warm;
+        box-shadow: $shadow;
+
+        label.budgie-switcher-title {
+            color: $textbg;
+
+            &:dir(ltr) {
+                padding: 0 0 0 6px;
+            }
+
+            &:dir(rtl) {
+                padding: 0 6px 0 0;
+            }
+        }
+    }
+}
+
+// Internal part of the Switcher
+.budgie-switcher {
+    @extend .budgie-notification;
+}
+
+.drop-shadow {
+    margin: 5px 9px;
+    padding: 3px;
+    border-radius: $incorner;
+    box-shadow: none;
+    background-color: $bg_color;
+
+    .linked>button {
+        border-radius: $incorner;
+    }
+}
+
+%budgie_dialog {
+    border-radius: $incorner;
+    background-color: $bg_color;
+
+    decoration {
+        border-radius: $corner;
+    }
+}
+
+// Session Dialog
+.budgie-session-dialog {
+    @extend %budgie_dialog;
+
+    label:not(:last-child),
+    .dialog-title {
+        font-size: 120%;
+    }
+
+    .linked.horizontal>button {
+        padding: 8px 16px;
+        border-top: 1px solid $pm_dark;
+        border-radius: 0;
+
+        &:first-child {
+            border-bottom-left-radius: 2px;
+        }
+
+        &:last-child {
+            border-bottom-right-radius: 2px;
+        }
+    }
+}
+
+// PolKit Dialog
+.budgie-polkit-dialog {
+    @extend %budgie_dialog;
+
+    .message {
+        color: $textbg;
+    }
+
+    .failure {
+        color: $pm_red;
+    }
+}
+
+// Run Dialog
+.budgie-run-dialog {
+    @extend %budgie_dialog;
+
+    background-color: $bg_warm;
+    border-style: none;
+
+    entry.search {
+        font-size: 120%;
+        box-shadow: none;
+        background-color: transparent;
+        border-style: none;
+        border-radius: $incorner;
+        padding: 6px;
+    }
+
+    list .dim-label {
+        opacity: 1;
+    }
+
+    scrolledwindow {
+        border-top: 1px solid $pm_dark;
+    }
+}
+
+
+///////////
+/* Raven */
+///////////
+
+.budgie-container.background {
+    background-color: transparent;
+}
+
+//fixes raven transition
+
+.raven {
+    background-color: $pm_color;
+    border-radius: $corner 0 0 0;
+    padding: 10;
+}
+
+
+.raven-background {
+    border-style: none;
+    background-color: rgba($black, .27);
+    border-radius: $incorner;
+
+    &:selected {
+        border-radius: $incorner;
+        background-color: $bg_color;
+    }
+}

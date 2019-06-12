@@ -1,0 +1,94 @@
+@import 'palette';
+@import 'palette_variable';
+@import '../../../config';
+
+//Darker shades
+$shade_dark: null;//initialize darker shades
+$ps_shade_dark: null;
+
+
+@if $shade < 90 {
+    $shade_dark: $shade+20;
+    $ps_shade_dark: $ps_shade+20;
+
+} @else {
+    $shade_dark: 100;
+    $ps_shade_dark: 100;
+} 
+
+//Default White Shade
+$lt: 10;
+
+//Functions to pick color//
+
+//getcolor function//
+@function getcolor($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+
+    @return $map;
+}
+
+//get pm_color//
+$pm_color: getcolor($palette, $pick_color, #{$shade});
+
+//get pm_dark//
+$pm_dark: getcolor($palette, $pick_color, #{$shade_dark});
+
+//get pm_white;//
+$pm_white: getcolor($palette, $pick_color, #{$lt});
+
+//get ps_color//
+$ps: getcolor($palette, $ps_pick, #{$ps_shade});
+
+//get ps_dark//
+$psdk: getcolor($palette, $ps_pick, #{$ps_shade_dark});
+
+
+
+//Variables//
+$ps_color: mix($ps, $pm_color, 90%);
+$ps_dark: mix($psdk, $pm_color, 90%);
+
+$ps_cool: mix(#3737b3, $ps_color, 17%);
+$ps_warm: mix(#8f0e0e, $ps_color, 17%);
+
+$pm_warm: mix(#8f0e0e, $pm_color, 17%);
+$pm_cool: mix(#3737b3, $pm_color, 17%);
+
+$bg_lt : $pm_white;
+$bg_dk : mix($black, $pm_color, 72%);
+
+
+//Base Colors //
+$pm_red: mix($red_40, $pm_color, 80%);
+$pm_yellow: mix($bronze_40, $pm_color, 80%);
+$pm_blue: mix($blue_40, $pm_color, 80%);
+$pm_green: mix($green_40, $pm_color, 80%);
+
+$dk_red: mix($pm_red, $black, 60%);
+$dk_blue: mix($pm_blue, $black, 60%);
+$dk_green: mix($pm_green, $black, 60%);
+$dk_yellow: mix($pm_yellow, $black, 60%);
+
+
+//Text//
+$text: $black;
+$textfg: if($variant=='dark', $bg_lt, $bg_dk);
+$textbg: $bg_lt;
+$textdb: rgba($black, .27);
+
+//Bakgrounds//
+$bg_color: rgba($pm_color, $alpha);
+$bg_dark: rgba($pm_dark, $alpha);
+$bg_cool: rgba($pm_cool, $alpha_cool);
+$bg_warm: rgba($pm_warm, $alpha);
+$bg_view: if($variant=='light', $bg_lt, $bg_dk); //change later for variant
+
+
+//Overlays//
+$overlay: $ps_color;
+
+//Borders and Lines//
+$divider: mix($bg_lt, $bg_color, .5);

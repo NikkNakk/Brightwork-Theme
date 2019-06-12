@@ -1,0 +1,28 @@
+//Configuration file for theme. More detailed instructions in Readme
+
+
+//Primary Color
+$pick_color: 'teal';
+
+//Personal(Accent) Color
+$ps_pick: 'indigo';
+
+//Shade  (How dark of the primary color ranging 10 to 100) //light shades may not work with light text color
+$shade: 40;
+$ps_shade: 20;
+
+
+
+//Opacity
+$alpha: 0.99; //How transparent the main elements are
+$alpha_cool: $alpha - 0.05;
+
+//Shadows (1 for yes, 0 for no. You can also put a value ranging 0 to 1)
+$enable_btn: 1;
+
+//Radii Value In px for windows, headers, and other objects. 
+$corner: 18px;
+$incorner: ($corner - 10);
+$btncorner: 9999px;
+
+
