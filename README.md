@@ -84,7 +84,7 @@ Make sure that you have the proper dependencies:
 git clone https://github.com/Nikknakk/Brightwork-Theme
 ```
 
-2. Extract the zip and change directories into the Brightwork Theme directory
+2. Enter the Brightwork-Theme directory
 
 3. Open the ```_config.scss``` and choose your primary color and shade, or any other changes you would like. Build the theme and install with: 
 ```
