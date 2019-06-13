@@ -326,14 +326,14 @@ headerbar,
 //Pathbars, needs work
 
 .path-bar button {
-    margin-top: 8;
-    margin-bottom: 8;
+    margin-top: 8px;
+    margin-bottom: 8px;
 
     &.text-button,
     &.image-button,
     & {
-        padding-left: 2;
-        padding-right: 2;
+        padding-left: 2px;
+        padding-right: 2px;
     }
 
     &.text-button.image-button label {
@@ -359,15 +359,15 @@ headerbar,
     }
 
     image {
-        padding-left: 2;
-        padding-right: 2;
+        padding-left: 2px;
+        padding-right: 2px;
     }
 
     &:checked {
         background-color: rgba($black, 0.27);
         border-radius: 16px;
-        margin-top: 8;
-        margin-bottom: 8
+        margin-top: 8px;
+        margin-bottom: 8px;
     }
 }
 
@@ -651,7 +651,7 @@ notebook {
         background-color: $bg_view;
         color: $textfg;
         border-radius: $incorner;
-        margin: 0 10 10 10;
+        margin: 0 10px 10px 10px;
 
 
     }
@@ -679,7 +679,7 @@ notebook {
             &:checked {
                 background-image: radial-gradient(circle 8px at 0 74.5%, $pm_color 90%, $bg_view 100%, transparent), radial-gradient(circle 8px at 100% 74.5%, $pm_color 91%, $bg_view 100%, transparent);
                 background-color: $bg_view;
-                box-shadow: inset 0 18 0 0 $pm_color;
+                box-shadow: inset 0 18px 0 0 $pm_color;
                 border-style: inset solid;
                 border-color: $pm_color;
                 color: $textfg;
@@ -730,7 +730,7 @@ notebook:backdrop {
         background-color: $bg_view;
         color: $textfg;
         border-radius: $incorner;
-        margin: 0 10 10 10;
+        margin: 0 10px 10px 10px;
 
 
     }
@@ -758,7 +758,7 @@ notebook:backdrop {
             &:checked {
                 background-image: radial-gradient(circle 8px at 0 74.5%, $pm_cool 90%, $bg_view 100%, transparent), radial-gradient(circle 8px at 100% 74.5%, $pm_cool 91%, $bg_view 100%, transparent);
                 background-color: $bg_view;
-                box-shadow: inset 0 18 0 0 $pm_cool;
+                box-shadow: inset 0 18px 0 0 $pm_cool;
                 border-style: inset solid;
                 border-color: $pm_cool;
                 color: $textfg;
@@ -830,7 +830,7 @@ scrollbar {
 
     // slider
     slider {
-        transition: $transition, margin 0ms, border-width 0ms$text;
+        transition: $transition, margin 0ms, border-width 0ms;
         min-width: 6px;
         min-height: 6px;
         border: 4px solid transparent;
@@ -1016,7 +1016,7 @@ button {
     }
 }
 
-button:insensitive {
+button:disabled {
     opacity : 0.6;
 }
 

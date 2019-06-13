@@ -50,7 +50,7 @@
                 &:checked {
                     background-image: radial-gradient(circle 8px at 0 73.5%, $pm_cool 90%, $bg_view 100%, transparent), radial-gradient(circle 8px at 100% 73.5%, $pm_cool 91%, $bg_view 100%, transparent);
                     background-color: $bg_view;
-                    box-shadow: inset 0 20 0 0 $pm_cool;
+                    box-shadow: inset 0 20px 0 0 $pm_cool;
                     border-style: inset solid;
                     border-top-width: 8px;
                     border-color: $pm_cool;
