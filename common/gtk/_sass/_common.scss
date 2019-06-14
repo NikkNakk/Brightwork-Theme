@@ -145,7 +145,9 @@ window.background.popup {
         padding-right: $pad;
     }
 
-    :hover{color:$ps_color}
+    :hover{background-color:$ps_color;
+        border-radius:$incorner;
+    }
 }
 
 separator.sidebar {
@@ -537,6 +539,7 @@ menu,
 
         &:hover {
             background-color: $ps_color;
+            border-radius:$incorner;
         }
 
         &:disabled {
@@ -562,15 +565,15 @@ menu,
         radio {
             min-height: 16px;
             min-width: 16px;
-
+            
             &:dir(ltr) {
                 margin-right: 6px;
-                margin-left: 2px;
+                margin-left: 4px;
             }
 
             &:dir(rtl) {
                 margin-left: 6px;
-                margin-right: 2px;
+                margin-right: 4px;
             }
         }
     }
@@ -1006,7 +1009,8 @@ button {
         }
 
         &:hover:not(.titlebutton){
-            color:$ps_color;
+            background-color:$ps_color;
+            border-radius:$incorner;
         }
     }
 
@@ -1021,7 +1025,8 @@ button:disabled {
 }
 
 modelbutton:hover {
-    color:$ps_color;        
+    background-color:$ps_color;
+    border-radius: $incorner;        
 }
 
 //Comboboxes
