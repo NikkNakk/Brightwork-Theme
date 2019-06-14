@@ -7,6 +7,9 @@ $pick_color: 'teal';
 //Personal(Accent) Color
 $ps_pick: 'indigo';
 
+//Color Mixes 
+$temp_mix: 1; //Scalar amount of difference between warm, neutral, and cool tones. From 0 to 1, 0 being off
+
 //Shade  (How dark of the primary color ranging 10 to 100) 
 $shade: 40;
 $ps_shade: 40;
