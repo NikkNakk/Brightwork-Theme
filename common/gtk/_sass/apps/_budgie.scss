@@ -219,11 +219,22 @@
         }
     }
 
+    &.icon-popover {
+        .icon-popover-stack {
+            padding: 4px;
+        }
+    }
+
+    &.caffeine-popover,
+    &.night-light-indicator,
+    &.places-menu,
     &.user-menu {
         .container {
             padding: 8px;
         }
+    }
 
+    &.user-menu {
         separator {
             margin: 4px 0;
         }
@@ -235,17 +246,7 @@
         }
     }
 
-    &.night-light-indicator {
-        .container {
-            padding: 8px;
-        }
-    }
-
     &.user-menu {
-        .container {
-            padding: 8px;
-        }
-
         separator {
             margin: 4px 0;
         }
@@ -254,18 +255,6 @@
     &.sound-popover {
         separator {
             margin: 3px 0;
-        }
-    }
-
-    &.night-light-indicator {
-        .container {
-            padding: 8px;
-        }
-    }
-
-    &.places-menu {
-        .container {
-            padding: 8px;
         }
     }
 }
