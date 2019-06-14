@@ -505,6 +505,31 @@
     border-radius: $corner 0 0 0;
     padding: 10px;
 
+
+    ////////////////
+    /* Notifications */
+    ///////////////
+
+    .raven-notifications-view {
+        .raven-header { // Header of the Notifications View
+            .do-not-disturb { // Do Not Disturb button
+                margin-right: 6px; // Add some margin on the right to space it away from Clear All Notifications
+            }
+        }
+
+        .raven-notifications-group { // Notification Groups in the list
+            .raven-notifications-group-header { // Header in each Group
+                margin-right: 15px; // Align with DND button
+            }
+
+            .notification-clone { // Individual Notification
+                box > .flat { // Clear specific notification
+                    margin-right: 9px; // Align with DND button
+                }
+            }
+        }
+    }
+
     ///////////
     /* Widgets */
     ///////////
