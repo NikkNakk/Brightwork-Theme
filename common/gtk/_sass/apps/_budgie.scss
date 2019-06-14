@@ -504,6 +504,79 @@
     background-color: $pm_color;
     border-radius: $corner 0 0 0;
     padding: 10px;
+
+
+    ////////////////
+    /* Notifications */
+    ///////////////
+
+    .raven-notifications-view {
+        .raven-header { // Header of the Notifications View
+            .do-not-disturb { // Do Not Disturb button
+                margin-right: 6px; // Add some margin on the right to space it away from Clear All Notifications
+            }
+        }
+
+        .raven-notifications-group { // Notification Groups in the list
+            .raven-notifications-group-header { // Header in each Group
+                margin-right: 15px; // Align with DND button
+            }
+
+            .notification-clone { // Individual Notification
+                box > .flat { // Clear specific notification
+                    margin-right: 9px; // Align with DND button
+                }
+            }
+        }
+    }
+
+    ///////////
+    /* Widgets */
+    ///////////
+
+    .vertical { // All Raven Widgets
+        .raven-header {
+            padding: 6px 0; // 6px vertical padding
+        }
+    }
+
+    .raven-calendar { // Calendar Widget (Literal GtkCalendar)
+        padding: 4px;
+    }
+
+    .audio-widget { // Audio Widgets
+        .raven-header { // Inner Headers
+            scale {
+                font-size: 0; // Hide marks-after 
+            }
+        }
+    }
+
+    .mpris-widget { // MPRIS Widget
+        &:not(.no-album-art) { // Has Album Art
+            .raven-mpris {
+                background-color: rgba($black, .5);
+            }
+        }
+
+        &.no-album-art { // No Album Art
+            .raven-mpris {
+                background-color: rgba($black, .7);
+            }
+        }
+
+        .raven-mpris { // MPRIS Player Information and Controls
+            box.horizontal:not(.raven-mpris-controls) { // MPRIS Information (will eventually be refactored into dedicated info container)
+                margin: 2px 0; // 2px vertical
+            }
+
+            .raven-mpris-controls { // Inner Controls Container
+                .flat { // Player Buttons
+                    margin: 6px 12px; // 6px vertical, 12px horizontal
+                }
+            }
+        }
+    }
 }
 
 
