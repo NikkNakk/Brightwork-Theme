@@ -81,13 +81,13 @@
             box-shadow: inset 0px 0px 1px 1px rgba($bg_cool, .6);
         }
 
+        &:hover box image {
+            color: $ps_color;
+        }
+        
         &.budgie-menu-launcher:hover {
             background-color: transparent;
             box-shadow: none;
-
-            box image {
-                color: transparent;
-            }
         }
 
         &.budgie-menu-launcher:checked {
