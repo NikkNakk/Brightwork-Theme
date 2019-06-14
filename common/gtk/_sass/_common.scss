@@ -1020,6 +1020,10 @@ button:disabled {
     opacity : 0.6;
 }
 
+modelbutton:hover {
+    color:$ps_color;        
+}
+
 //Comboboxes
 
 combobox {
@@ -1394,6 +1398,9 @@ popover.background {
     border-color: rgba(black, .3);
     border-width: 1px;
 
+    label{
+        padding:4px;
+    }  
 
     & separator {
         background-color: rgba($pm_white, 0.5);
