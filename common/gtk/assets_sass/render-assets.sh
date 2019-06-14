@@ -12,7 +12,7 @@ for makecolors in "$SASS_DIR"; do
       sassc "${SASSC_OPT[@]}" "$SASS_DIR/makecolors."{scss,css}
     done
 
-sed -e 's/@define-color pm=/PM=/' -e 's/@define-color pmred/PMRED/' -e 's/@define-color pmblue/PMBLUE/' -e 's/@define-color pmyellow/PMYELLOW/' -e 's/@define-color pmgreen/PMGREEN/' -e 's/@define-color pmwarm/PMWARM/' $SASS_DIR/makecolors.css> $SASS_DIR/colorsassets.css
+sed -e 's/@define-color ps=/PS=/' -e 's/@define-color pmred/PMRED/' -e 's/@define-color pmblue/PMBLUE/' -e 's/@define-color pmyellow/PMYELLOW/' -e 's/@define-color pmgreen/PMGREEN/' -e 's/@define-color pswarm/PSWARM/' $SASS_DIR/makecolors.css> $SASS_DIR/colorsassets.css
 
 
 DIR="${BASH_SOURCE%/*}"
@@ -23,7 +23,7 @@ DIR="${BASH_SOURCE%/*}"
 
 echo "== Modifying Assets SVG (Remember to render assets if you changed colors)..."
 
-sed -e 's/"$pm_color"/'"$PM/" -e 's/"$pm_red"/'"$PMRED/" -e 's/"$pm_blue"/'"$PMBLUE/" -e 's/"$pm_yellow"/'"$PMYELLOW/" -e 's/"$pm_green"/'"$PMGREEN/" -e 's/"$pm_warm"/'"$PMWARM/" $SASS_DIR/_assetssass.svg> $SASS_DIR/assets.svg
+sed -e 's/"$ps_color"/'"$PS/" -e 's/"$pm_red"/'"$PMRED/" -e 's/"$pm_blue"/'"$PMBLUE/" -e 's/"$pm_yellow"/'"$PMYELLOW/" -e 's/"$pm_green"/'"$PMGREEN/" -e 's/"$ps_warm"/'"$PSWARM/" $SASS_DIR/_assetssass.svg> $SASS_DIR/assets.svg
 
 
 if [[ ! "$(command -v inkscape || command -v rendersvg)" ]]; then
