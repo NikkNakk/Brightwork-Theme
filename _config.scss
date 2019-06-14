@@ -7,7 +7,7 @@ $pick_color: 'teal';
 //Personal(Accent) Color
 $ps_pick: 'indigo';
 
-//Shade  (How dark of the primary color ranging 10 to 100) //light shades may not work with light text color
+//Shade  (How dark of the primary color ranging 10 to 100) 
 $shade: 40;
 $ps_shade: 40;
 
@@ -16,6 +16,7 @@ $ps_shade: 40;
 //Opacity
 $alpha: 0.99; //How transparent the main elements are
 $alpha_cool: $alpha - 0.05;
+$icon_panel_alpha : 0; //Opacity of icon backgrounds on the Budgie Panel. From 0 to 1, 0 being off
 
 //Shadows (1 for yes, 0 for no. You can also put a value ranging 0 to 1)
 $enable_btn: 1;
@@ -24,5 +25,3 @@ $enable_btn: 1;
 $corner: 18px;
 $incorner: ($corner - 10);
 $btncorner: 9999px;
-
-
