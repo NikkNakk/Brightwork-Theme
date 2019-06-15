@@ -502,7 +502,11 @@ menu.background {
 
 window .background {
     border-radius: $incorner;
-    background-color: rgba($ps_color, 0.5);
+
+}
+
+window > .background {
+     background-color: rgba($ps_color, 0.5);
 }
 
 menu,
