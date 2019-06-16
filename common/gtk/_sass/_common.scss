@@ -253,7 +253,7 @@ headerbar,
 
         &.close {
             color: transparent;
-            border-radius: $corner;
+            border-radius: $btncorner;
             background-color: $pm_red;
             background-position: center;
             background-repeat: no-repeat;
@@ -265,14 +265,14 @@ headerbar,
             }
 
             &:hover {
-                background-color: rgba($dk_red, 0.5);
+                background-color: $pm_red;
             }
         }
 
 
         &.minimize {
             color: transparent;
-            border-radius: $corner;
+            border-radius: $btncorner;
             background-color: $pm_blue;
             background-position: center;
             background-repeat: no-repeat;
@@ -284,13 +284,13 @@ headerbar,
             }
 
             &:hover {
-                background-color: rgba($dk_blue, 0.5);
+                background-color: $pm_blue;
             }
         }
 
         &.maximize {
             color: transparent;
-            border-radius: $corner;
+            border-radius: $btncorner;
             background-color: $pm_green;
             background-position: center;
             background-repeat: no-repeat;
@@ -302,7 +302,7 @@ headerbar,
             }
 
             &:hover {
-                background-color: rgba($dk_green, 0.5);
+                background-color: $pm_green;
             }
         }
 
