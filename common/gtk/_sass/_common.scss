@@ -647,7 +647,7 @@ terminal-window:backdrop notebook {
 
 notebook {
     background-color: $pm_color;
-    margin: 0px;
+    margin: 10px;
     border-radius: $incorner;
 
     image {
@@ -659,7 +659,7 @@ notebook {
         background-color: $bg_view;
         color: $textfg;
         border-radius: $incorner;
-        margin: 0 10px 10px 10px;
+        margin: 0px;
 
 
     }
@@ -727,7 +727,7 @@ notebook {
 
 notebook:backdrop {
     background-color: $pm_cool;
-    margin: 0px;
+    margin: 10px;
     border-radius: $incorner;
 
     image {
@@ -738,7 +738,7 @@ notebook:backdrop {
         background-color: $bg_view;
         color: $textfg;
         border-radius: $incorner;
-        margin: 0 10px 10px 10px;
+        margin: 0px;
 
 
     }
@@ -1523,6 +1523,10 @@ dialog:backdrop {
         background-color: transparent;
     }
 
+    &.background:not(.csd) {
+        background-color: $bg_color;
+    }
+
     & decoration {
         background-color: $bg_warm;
     }
@@ -1544,6 +1548,10 @@ messagedialog:backdrop {
 
     &.background {
         background-color: transparent;
+    }
+
+    &.background:not(.csd) {
+        background-color: $pm_color;
     }
 
 
