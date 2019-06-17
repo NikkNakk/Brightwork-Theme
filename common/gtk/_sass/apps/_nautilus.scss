@@ -89,7 +89,9 @@
         }
     }
 
-   
+   treeview {
+       color:$textfg;
+   }
 
     scrolledwindow {
         border-width: 5px;
