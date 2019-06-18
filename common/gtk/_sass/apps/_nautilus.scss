@@ -43,6 +43,11 @@
                     margin-top: 3px;
                 }
 
+                box {
+                    padding: 0px;
+                    image {margin-right:4px;}
+                }
+
             }
 
             >tab {
@@ -61,7 +66,6 @@
                         margin-left: 3px;
                         margin-right: 3px;
                         border-radius: 8px 8px 0 0;
-                        padding: 4px;
                         margin-bottom: 0px;
                     }
                 }
@@ -77,7 +81,6 @@
                         margin-left: 3px;
                         margin-right: 3px;
                         border-radius: 8px 8px 0 0;
-                        padding: 4px;
                         margin-bottom: 0px;
                     }
 
@@ -117,6 +120,7 @@
 }
 
 .nautilus-desktop.nautilus-canvas-item {
-    color: $text;
+    color: $textbg;
+    text-shadow:1px 1px 1px rgba($black, 0.5);
 
 }

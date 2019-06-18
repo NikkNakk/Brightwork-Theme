@@ -114,7 +114,7 @@ window.background.popup {
     }
 
     &:selected:hover {
-        color:$ps_color
+        color: $ps_color
     }
 
     &:disabled {
@@ -135,7 +135,7 @@ window.background.popup {
     background-color: transparent;
     border-style: none;
     padding-bottom: $pad;
-    margin-bottom: 0;
+    margin-bottom: 5px;
 
     list {
         background-color: transparent;
@@ -145,8 +145,13 @@ window.background.popup {
         padding-right: $pad;
     }
 
-    :hover{background-color:$ps_color;
-        border-radius:$incorner;
+    row {
+        border-radius: $incorner;
+        margin-right: 8px;
+
+        &:hover {
+            background-color: $ps_color;
+        }
     }
 }
 
@@ -167,7 +172,9 @@ separator.sidebar {
 
 //headerbar
 
-.csd headerbar {padding: 0 10px;}
+.csd headerbar {
+    padding: 0 10px;
+}
 
 headerbar {
     min-height: 42px;
@@ -192,7 +199,8 @@ headerbar {
         padding-right: 12px;
     }
 
-    .maximized &, .tiled & {
+    .maximized &,
+    .tiled & {
         background-color: $pm_color;
         border-radius: 0;
     }
@@ -200,7 +208,8 @@ headerbar {
     &:backdrop {
         background-color: $bg_cool;
 
-        .maximized &, .tiled & {
+        .maximized &,
+        .tiled & {
             background-color: $pm_cool;
             border-radius: 0;
         }
@@ -213,7 +222,8 @@ headerbar {
         border-bottom-width: 0;
         border-radius: $incorner $incorner 0 0;
 
-        .maximized &, .tiled & {
+        .maximized &,
+        .tiled & {
             background-color: $pm_color;
             border-radius: 0px;
         }
@@ -227,7 +237,8 @@ headerbar {
         border-bottom-width: 0;
         border-radius: $incorner $incorner 0 0;
 
-        .maximized &, .tiled & {
+        .maximized &,
+        .tiled & {
             background-color: $pm_cool;
             border-radius: 0px;
         }
@@ -238,7 +249,7 @@ headerbar {
 
 
 headerbar,
-.titlebar{
+.titlebar {
 
     &.default-decoration button.titlebutton {
         image {
@@ -247,9 +258,6 @@ headerbar,
     }
 
     button.titlebutton {
-        min-width: 0;
-        padding: 0;
-        background-color: transparentize($bg_color, 1);
 
         &.close {
             color: transparent;
@@ -328,30 +336,28 @@ headerbar,
 //Pathbars, needs work
 
 .path-bar button {
-    margin-top: 8px;
-    margin-bottom: 8px;
+    border-radius: $corner;
 
-    &.text-button,
-    &.image-button,
-    & {
-        padding-left: 2px;
-        padding-right: 2px;
+    &.text-button {
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 2px;
+        margin-right: 2px;
+
+        label {
+            min-width: 30px;
+        }
     }
 
-    &.text-button.image-button label {
-        padding-left: 0;
-        padding-right: 0;
+    &.image-button:hover image {
+        color: rgba($textbg, 0.5);
     }
 
     &.text-button.image-button,
     & {
-        label:last-child {
-            padding-right: 10px;
-        }
-
-        label:first-child {
-            padding-left: 10px;
-        }
+        padding: 0px;
+        margin-top: 8px;
+        margin-bottom: 8px;
     }
 
     &.slider-button,
@@ -367,9 +373,6 @@ headerbar,
 
     &:checked {
         background-color: rgba($black, 0.27);
-        border-radius: 16px;
-        margin-top: 8px;
-        margin-bottom: 8px;
     }
 }
 
@@ -505,8 +508,8 @@ window .background {
 
 }
 
-window > .background {
-     background-color: rgba($ps_color, 0.5);
+window>.background {
+    background-color: rgba($ps_color, 0.5);
 }
 
 menu,
@@ -541,10 +544,12 @@ menu,
         min-width: 40px;
         padding: $pad;
         color: $textbg;
+        margin-left: 5px;
+        margin-right: 5px;
 
         &:hover {
             background-color: $ps_color;
-            border-radius:$incorner;
+            border-radius: $incorner;
         }
 
         &:disabled {
@@ -570,7 +575,7 @@ menu,
         radio {
             min-height: 16px;
             min-width: 16px;
-            
+
             &:dir(ltr) {
                 margin-right: 6px;
                 margin-left: 4px;
@@ -683,6 +688,13 @@ notebook {
             color: black;
             border-top-width: 8px;
 
+            box {
+                padding: 0px;
+
+                image {
+                    margin-right: 4px;
+                }
+            }
 
             &:checked {
                 background-image: radial-gradient(circle 8px at 0 74.5%, $pm_color 90%, $bg_view 100%, transparent), radial-gradient(circle 8px at 100% 74.5%, $pm_color 91%, $bg_view 100%, transparent);
@@ -836,6 +848,10 @@ scrollbar {
         border-left: 1px solid transparent;
     }
 
+    &:hover {
+        background-color: transparent;
+    }
+
     // slider
     slider {
         transition: $transition, margin 0ms, border-width 0ms;
@@ -856,6 +872,30 @@ scrollbar {
 
         &:disabled {
             background-color: $textdb;
+        }
+    }
+
+    &.vertical button {
+        color: rgba($pm_white, 0.5);
+
+        &.up {
+            -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
+        }
+
+        &.down {
+            -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+        }
+    }
+
+    &.horizontal button {
+        color: rgba($pm_white, 0.5);
+
+        &.down {
+            -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
+        }
+
+        &.up {
+            -gtk-icon-source: -gtk-icontheme('pan-start-symbolic');
         }
     }
 }
@@ -987,51 +1027,77 @@ $a in ("check", "checkbox"),
 //Buttons
 
 button {
+    min-height: 10px;
+    min-width: 10px;
+    border-radius: $corner;
+
+    &:not(.titlebutton) image {
+        padding: 4px;
+    }
+
+    &:active,
+    &:checked {
+        color: $textbg;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+    }
+
+    &.image-button {
+        min-width: 10px;
+
+        &:hover {
+            image {
+                color: $ps_color;
+            }
+        }
+    }
+
+    &.text-button {
+        min-width: 10px;
+        padding: $pad;
+
+        &:hover {
+            background-color: $ps_color;
+        }
+    }
+
     &.text-button.image-button {
-        padding-left: 5px;
-        padding-right: 5px;
+        margin: 0px 5px;
 
         label {
             &:first-child {
-                padding-left: 8px;
-                padding-right: 2px;
+                margin-left: 5px;
+                margin-right: 2px;
             }
 
             &:last-child {
-                padding-right: 8px;
-                padding-left: 2px;
+                margin-left: 2px;
+                margin-right: 5px;
             }
 
             &:only-child {
-                padding-left: 8px;
-                padding-right: 8px;
+                margin-left: 5px;
+                margin-right: 5px;
             }
         }
 
-        &.popup {
-            padding-right: 8px;
-            padding-left: 8px;
-        }
-
-        &:hover:not(.titlebutton){
-            background-color:$ps_color;
-            border-radius:$incorner;
+        &:hover {
+            background-color: $ps_color;
         }
     }
 
-    label {
-        color: $pm_white;
-        padding: $pad;
+    &.popup {
+        padding: 0px;
+        margin: 0px;
     }
-}
 
-button:disabled {
-    opacity : 0.6;
 }
 
 modelbutton:hover {
-    background-color:$ps_color;
-    border-radius: $incorner;        
+    background-color: $ps_color;
+    border-radius: $incorner;
 }
 
 //Comboboxes
@@ -1408,9 +1474,9 @@ popover.background {
     border-color: rgba(black, .3);
     border-width: 1px;
 
-    label{
-        padding:4px;
-    }  
+    label {
+        padding: 4px;
+    }
 
     & separator {
         background-color: rgba($pm_white, 0.5);
