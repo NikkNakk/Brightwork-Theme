@@ -1,5 +1,5 @@
 # Brightwork Theme
-**Version 0.1.0 (Public Test and Preview Version)**
+**Version 0.1.1 (Public Test and Preview Version)**
 
 ## Description: 
 Brightwork started as a personal theme. The original plan was to make a theme for my personal use, but after many people expressed their interest I began making a public version. This version is a public test or preview version based on my theme. This version has been converted from my original source to a cleaner theme structure and a more appropriate build system (meson). **This theme is still in development, and this is just a test or preview version for those interested.**
@@ -19,56 +19,60 @@ Brightwork started as a personal theme. The original plan was to make a theme fo
 <!--te-->
 
 
-## Priority Issues
+## Priority Issues and Tasks
 As stated, this is a test version for the theme. Here is a list of current priority issues that I have been focusing on.
 
-* Meson Build
-  - Meson build is functional
+* Meson Build:
+  - Meson build is functional.
   - Change render command to output progress rather than each line
   - Add colors and shades as an install option that initiates render command, will depreciate render command as a user input
   
-* Missing or incomplete elements, including:
-  - Background elements of some specific windows or applications
-  - Text cursor and text highlight not always visible
-  - Certain active, selected, or hovered elements need effects
-  - Popups for specific windows (like Firefox) do not follow theme guidelines
- 
- * Login display manager elements have not been addressed in theme yet
- 
- * Some elements always have opaque backgrounds (like notebook to create tabs shapes)
- 
- * Padding and margins for some system or specific windows need to be corrected (like system settings)
- 
- * Current text color format doesn't work when shade is set too low. On the light theme the text will blend into the foreground views
- 
- * Treeview text is not always consistent 
+* Windows: 
+  - Specific system windows need attention
+        - Need to start list of what applications need work
+        - Popups in applications (like firefox) are not consistent
+        - Some windows are more opaque due to double layers of backgrounds due to lack of specificiy in some selectors.
+  - Text cursor is not always visible in light variant of theme
+  - Hover/Active/Selected effects are more consistent, but still not complete in all windows
+        - Budgie menu and panel do not have proper effects
+  
+* System: 
+  - Login display manager needs attention
+
+* Budgie: 
+  - Work on Budgie specific functionality (Special thanks to Josh Strobl) 
+        - Budgie panel needs work (issues with icon shapes and autohide)
+        - Hover/Selected/Active effects need attention 
+
 
 **Note: These represent current priority issues;**  This is just the list of priority issues. I have my personal notes that have a list of many other issues I have taken note of. The priority issues represent current issues that I believe will be noticed first by many users, and are ones that specifically would damper functionality of the theme enough to weaken support for development. I'm hoping that clarifying this as a test version will help streamline the process of tracking down and tweaking small issues while I am, or others, are working on some of the larger issues that would directly deture people from using the theme. This also gives people a chance to play with the theme without waiting forever! 
 
 
 ## Roadmap and Goals
 
- 1. Ensure meson build is working efficiently and has more install options (continued progress)
-    -Install options should include color and shade arguments
- 2. Verify dependencies (continued progress)
+ 1. Ensure meson build is working efficiently (complete) and has more install options (continued progress)
+    - Install options should include color and shade arguments
+ 2. Verify dependencies (complete for Solus Budgie)
  3. Organize GitHub (continued progress)
- 4. Create and begin tracking issues (not started)
-    - Priority issue list is on GitHub, but a complete issue task list needs to be organized
-    - Start tracking application specific issues to see which application specific sass files are needed
+ 4. Create and begin tracking issues (Continued progress)
+    - Begun tracking and completing issues on Github
+    - Need to start application specific lists
  5. Begin fixing priority issues and updating priority issues list based on user tests and feedback (continued progress)
  6. Complete and update theme design guidelines (continued progress)
     - I want to ensure there is a proper framework for the theme design
  7. Create and complete resources for GitHub page: 
-    - Readme 
-    - Screenshots
-    - Instructions
-    - Formatting 
+    - Readme (complete)
+    - Update Screenshots 
+    - Instructions (complete)
+    - Formatting (continued)
+    - Add more organization for development (features, issues, etc.) (continued)
+   8. Begin porting to other environnments
 
 # Installation 
 
 ## Dependencies 
 Make sure that you have the proper dependencies:
-* *Currently the preview version is just for Solus Budgie. Other versions will be included in future releases.
+* Currently the preview version is just for Solus Budgie. Other versions will be included in future releases.
 
 * Meson and Ninja
 * Inkscape
@@ -190,6 +194,7 @@ One of the large aspects for the vision of the theme was to enable user choice. 
 
 I will be looking for help with the development of this theme. If you are interested, keep following for more details!.
 
+   * Special thanks: JoshStrobl, JacekJagosz, EbonJaeger, and Staudey for their contributions to the theme already! It has been a big help.
 
 # Brightwork Theme Guidelines (Development)
 This project begun just as something for myself. I had zero experience when I started, so I read a bunch of resources before I begun. One thing that became clear was that a proper guideline determined the success of a theme, ui, or ux. Here are the guidelines I wrote up for myself when I was making this theme for myself that I have adapted for this Readme and the continued development of the theme (These guidelines are a work in progress and open to change as well). 
