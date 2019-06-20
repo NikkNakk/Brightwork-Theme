@@ -7,7 +7,7 @@ Encoding=UTF-8
 Name[en_CA]=index.theme
 
 [X-GNOME-Metatheme]
-GtkTheme=Birghtwork
+GtkTheme=Brightwork
 MetacityTheme=Brightwork
 IconTheme=Papirus
 CursorTheme=Papirus
