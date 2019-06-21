@@ -373,7 +373,7 @@
     :selected image {
     padding:4px;
     background-color:$ps_color;
-    border-radius:40%;
+    border-radius: $corner;
     }
 
     .drop-shadow {
