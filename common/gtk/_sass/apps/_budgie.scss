@@ -370,6 +370,12 @@
 .budgie-switcher-window {
     background-color: transparent;
 
+    :selected image {
+    padding:4px;
+    background-color:$ps_color;
+    border-radius:40%;
+    }
+
     .drop-shadow {
         margin: 8px 8px $incorner; 
         border-radius: $corner;
