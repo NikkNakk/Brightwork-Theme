@@ -1119,7 +1119,7 @@ combobox {
 
     }
 
-    entry {
+    entry {  
         background-color: transparent;
     }
 
@@ -1392,6 +1392,28 @@ spinner {
         &:disabled {
             opacity: 0.5;
         }
+    }
+}
+
+//Entries
+
+entry {
+
+    selection {
+        background-color:$ps_color;
+        }
+
+    &.search {
+        background-color:rgba($black,0.27);
+        border-radius:$corner;
+        padding:5px;
+        color:rgba($pm_white,1);
+
+        image {
+            margin:2px;
+            color:rgba($pm_white,0.5)
+        }
+
     }
 }
 
