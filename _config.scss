@@ -10,9 +10,7 @@
     //px: Type in a vlaue in pixels
 
 
-/////////////
-/* colors  */
-////////////
+// Theme Colors
 
     //Primary Color
     $pick_color: 'slate';
@@ -27,9 +25,7 @@
     $shade: 80;
     $ps_shade: 40;
 
-/////////////
-/* Effects */
-////////////
+// Effects
 
     //Opacity (How transparent the main elements are) (Mix value)
     $alpha: 0.99; //General opacity.
@@ -39,25 +35,19 @@
     //Shadows (Shadows for buttons) (Mix value)
     $enable_btn: 1;
 
-////////////
-/* Spacing */
-///////////
+// Spacing
 
     //Margins (Spacing around objects) (px)
     $mag: 10px; //Window Margins
 
-/////////////
-/* Corners */
-////////////
+// Corners
 
     //Radii Value (Corner radii) (px) 
     $corner: 17px; //General raddi
     $incorner: 7px; //Radii of inside elements (Recommend subtracting $mag from $corner value)
     $btncorner: 22px; //Radii of buttons
 
-////////////
-/* Budgie */
-///////////
+// Budgie
 
     //Enable regions in Budgie (Mix value)
     $start_bot: 1; //Start region of bottom panel
@@ -68,9 +58,7 @@
     $center_top: 0; //Center region of top panel
     $end_top: 0; //End region of top panel
 
-///////////
-/* Raven */
-//////////
+// Raven
 
     //Raven padding (Amount of space for raven from top and bottom panels) (Scalar value: 0 to 10 tested)
     $raven_pad: 1;
