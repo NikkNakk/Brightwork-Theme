@@ -100,9 +100,112 @@ decoration {
     border-radius: $corner;
 }
 
-window.background.popup {
-    //desktop-context-menus apparently
-    background-color: transparent;
+window {
+
+    box.vertical {
+
+        scrolledwindow {
+
+            &>.frame {
+                background-color: rgba($black, 0);
+                border-radius: $incorner;
+
+                &>stack {
+                    background-color: transparent;
+                }
+            }
+
+            &:last-child {
+
+                &>.frame {
+                    background-color: rgba($black, .27);
+                    border-radius: $incorner;
+
+                }
+            }
+        }
+
+    }
+
+    box.horizontal {
+
+        &>stack {
+
+            scrolledwindow {
+
+                box.vertical {
+
+                    &>frame>list {
+                        background-color: rgba($black, 0.27);
+                        border-radius: $incorner;
+                        color: $textbg;
+                    }
+
+                    &>list {
+                        background-color: transparent;
+
+                        color: $textfg;
+                    }
+
+                }
+            }
+        }
+
+    }
+
+
+
+    stack {
+        background-color: transparent;
+
+        &.background {
+            background-color: transparent;
+        }
+    }
+
+    .frame>stack {
+        background-color: $bg_view;
+        color: $textbg;
+        border-radius: $incorner;
+        margin: 0px;
+    }
+
+    &:backdrop {
+
+        stack {
+            background-color: transparent;
+
+
+            &.background {
+                background-color: transparent;
+            }
+        }
+
+
+        .frame>stack {
+            background-color: $bg_view;
+            color: $textbg;
+            border-radius: $incorner;
+            margin: 0px;
+        }
+
+    }
+
+    &.background.popup {
+        //desktop-context-menus apparently
+        background-color: transparent;
+    }
+
+    &.csd {
+
+        &:not(.budgie-container) {
+            //fixes some padding issues
+
+            &>box {
+                margin: $mag;
+            }
+        }
+    }
 }
 
 .view {
@@ -127,6 +230,9 @@ window.background.popup {
     }
 }
 
+
+
+
 /////////////////
 /* 2.Sidebars */
 ///////////////
@@ -134,8 +240,7 @@ window.background.popup {
 .sidebar {
     background-color: transparent;
     border-style: none;
-    padding-bottom: $pad;
-    margin-bottom: 5px;
+
 
     list {
         background-color: transparent;
@@ -147,7 +252,7 @@ window.background.popup {
 
     row {
         border-radius: $incorner;
-        margin-right: 8px;
+
 
         &:hover {
             background-color: $ps_color;
@@ -163,7 +268,7 @@ separator.sidebar {
     background-color: rgba($black, .27);
     border-radius: $incorner;
     color: $textbg;
-    margin: 10px;
+    margin: $mag;
 }
 
 ///////////////////
@@ -173,7 +278,8 @@ separator.sidebar {
 //headerbar
 
 .csd headerbar {
-    padding: 0 10px;
+    padding: 0 $mag;
+    background-color: $bg_color;
 }
 
 headerbar {
@@ -181,6 +287,11 @@ headerbar {
     border-radius: $corner $corner 0 0;
     background-color: $bg_color;
     color: rgba($textbg, 0.5);
+
+    headerbar {
+        //avoid double headerbars
+        background-color: transparent;
+    }
 
     &.titlebar {
         transition: background-color $duration $ease-out, color $duration $ease-out;
@@ -207,6 +318,11 @@ headerbar {
 
     &:backdrop {
         background-color: $bg_cool;
+
+        headerbar {
+            //avoid double headerbars
+            background-color: transparent;
+        }
 
         .maximized &,
         .tiled & {
@@ -453,8 +569,8 @@ toolbar {
 
 .inline-toolbar {
     @extend toolbar;
-    background-color: darken($bg_color, 3%);
-    border-style: solid;
+    background-color: transparent;
+    border-style: none;
     border-color: $bg_dark;
     border-width: 0 1px 1px;
     padding: 3px;
@@ -544,8 +660,8 @@ menu,
         min-width: 40px;
         padding: $pad;
         color: $textbg;
-        margin-left: 5px;
-        margin-right: 5px;
+        margin-left: $mag;
+        margin-right: $mag;
 
         &:hover {
             background-color: $ps_color;
@@ -649,24 +765,31 @@ terminal-window:backdrop notebook {
 
 
 
-
 notebook {
     background-color: $pm_color;
-    margin: 10px;
+    margin: $mag;
     border-radius: $incorner;
 
     image {
         color: $textfg;
     }
 
-
     stack {
         background-color: $bg_view;
         color: $textfg;
         border-radius: $incorner;
         margin: 0px;
+    }
 
+    treeview.view {
 
+        .view {
+            color: $textfg;
+        }
+
+        header {
+            color: $textfg;
+        }
     }
 
     tabs {
@@ -739,7 +862,7 @@ notebook {
 
 notebook:backdrop {
     background-color: $pm_cool;
-    margin: 10px;
+    margin: $mag;
     border-radius: $incorner;
 
     image {
@@ -1119,7 +1242,7 @@ combobox {
 
     }
 
-    entry {  
+    entry {
         background-color: transparent;
     }
 
@@ -1192,7 +1315,7 @@ scale {
         fill,
         highlight,
         trough {
-            border-radius: 5px;
+            border-radius: $btncorner;
             -gtk-outline-radius: 7px;
         }
     }
@@ -1201,7 +1324,7 @@ scale {
         outline-offset: 2px;
         -gtk-outline-radius: 4.5px;
 
-        border-radius: $incorner;
+        border-radius: $btncorner;
         background-color: rgba($ps_dark, 0.5);
 
         &:disabled {
@@ -1232,7 +1355,7 @@ scale {
     }
 
     highlight {
-        border-radius: $incorner;
+        border-radius: $btncorner;
         background-color: $ps_cool;
     }
 
@@ -1400,18 +1523,18 @@ spinner {
 entry {
 
     selection {
-        background-color:$ps_color;
-        }
+        background-color: $ps_color;
+    }
 
     &.search {
-        background-color:rgba($black,0.27);
-        border-radius:$btncorner;
-        padding:5px;
-        color:rgba($pm_white,1);
+        background-color: rgba($black, 0.27);
+        border-radius: $btncorner;
+        padding: 5px;
+        color: rgba($pm_white, 1);
 
         image {
-            margin:2px;
-            color:rgba($pm_white,0.5)
+            margin: 2px;
+            color: rgba($pm_white, 0.5)
         }
 
     }
@@ -1432,12 +1555,20 @@ treeview.view {
     }
 
     background-color:transparent;
-    margin-left:6px;
-    margin-right:6px;
+    margin-left:$mag;
+    margin-right:$mag;
     border-radius:0px;
 
-    border-left-color: transparentize($bg_view, 0.85); // this is actually the tree lines color,
-    border-top-color: transparentize($bg_view, 0.9); // while this is the grid lines color, better then nothing
+    .view {
+        color: $textbg;
+    }
+
+    header {
+        color: $textbg;
+    }
+
+    border-left-color: transparentize($textbg, 0.85); // this is actually the tree lines color,
+    border-top-color: transparentize($textbg, 0.9); // while this is the grid lines color, better then nothing
 
     acceleditor>label {
         background-color: $bg_view;
@@ -1452,7 +1583,7 @@ textview.view {
     background-color: $bg_view;
     border-radius: $incorner;
     padding: $pad;
-    margin: 6px;
+    margin: $mag;
     color: $textfg
 }
 
@@ -1561,14 +1692,12 @@ tooltip {
 //Notifications 
 
 .app-notification {
-    margin: 10px;
+    margin: 5px;
     padding: 10px;
     color: $textbg;
     background-color: rgba($bg_warm, 1);
     border-radius: $corner;
-    border-width: 0 1px 1px 1px;
-    border-style: solid;
-    border-color: darken($pm_dark, 10%);
+    border-style: none;
 
     border {
         border: none;

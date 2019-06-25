@@ -1,30 +1,77 @@
 //Configuration file for theme. More detailed instructions in Readme
 
+//Each section will include a value type at the end of the description. 
+//The value types are the allowable (tested and working values) for that specific section.
 
-//Primary Color
-$pick_color: 'teal';
-
-//Personal(Accent) Color
-$ps_pick: 'indigo';
-
-//Color Mixes 
-$temp_mix: 1; //Scalar amount of difference between warm, neutral, and cool tones. From 0 to 1, 0 being off
-
-//Shade  (How dark of the primary color ranging 10 to 100) 
-$shade: 40;
-$ps_shade: 40;
+    //Scalar values : Any value. Large values may cause issues.
+    //Binary values : 1 for on, 0 for off.
+    //Mix value: Range from 0 to 1; 1 for on, 0 for off.
+    //Range: Will be given
+    //px: Type in a vlaue in pixels
 
 
+/////////////
+/* colors  */
+////////////
 
-//Opacity
-$alpha: 0.99; //How transparent the main elements are
-$alpha_cool: $alpha - 0.05;
-$icon_panel_alpha : 0; //Opacity of icon backgrounds on the Budgie Panel. From 0 to 1, 0 being off
+    //Primary Color
+    $pick_color: 'slate';
 
-//Shadows (1 for yes, 0 for no. You can also put a value ranging 0 to 1)
-$enable_btn: 1;
+    //Personal(Accent) Color
+    $ps_pick: 'teal';
 
-//Radii Value In px for windows, headers, and other objects. 
-$corner: 18px;
-$incorner: ($corner - 10);
-$btncorner: 9999px;
+    //Color Mixes (amount of change between color temperatures) (Mix value)
+    $temp_mix: 0.5; 
+
+    //Shade  (Darkness of the primary and accent colors) (Range from 30 to 100)
+    $shade: 80;
+    $ps_shade: 40;
+
+/////////////
+/* Effects */
+////////////
+
+    //Opacity (How transparent the main elements are) (Mix value)
+    $alpha: 0.99; //General opacity.
+    $alpha_cool: $alpha - 0.05; //Modify to change the backdrop elements opacity.
+    $icon_panel_alpha : 0; //Opacity of icon backgrounds on the Budgie Panel (Mix value)
+
+    //Shadows (Shadows for buttons) (Mix value)
+    $enable_btn: 1;
+
+////////////
+/* Spacing */
+///////////
+
+    //Margins (Spacing around objects) (px)
+    $mag: 10px; //Window Margins
+
+/////////////
+/* Corners */
+////////////
+
+    //Radii Value (Corner radii) (px) 
+    $corner: 17px; //General raddi
+    $incorner: 7px; //Radii of inside elements (Recommend subtracting $mag from $corner value)
+    $btncorner: 22px; //Radii of buttons
+
+////////////
+/* Budgie */
+///////////
+
+    //Enable regions in Budgie (Mix value)
+    $start_bot: 1; //Start region of bottom panel
+    $center_bot: 0; //Center region of bottom panel
+    $end_bot: 1; //End region of bottom panel
+
+    $start_top: 0.7; //Start region of top panel
+    $center_top: 0; //Center region of top panel
+    $end_top: 0; //End region of top panel
+
+///////////
+/* Raven */
+//////////
+
+    //Raven padding (Amount of space for raven from top and bottom panels) (Scalar value: 0 to 10 tested)
+    $raven_pad: 1;
+

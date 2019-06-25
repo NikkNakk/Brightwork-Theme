@@ -1,5 +1,5 @@
 # Brightwork Theme
-**Version 0.1.1 (Public Test and Preview Version)**
+**Version 0.1.2 (Public Test and Preview Version)**
 
 ## Description: 
 Brightwork started as a personal theme. The original plan was to make a theme for my personal use, but after many people expressed their interest I began making a public version. This version is a public test or preview version based on my theme. This version has been converted from my original source to a cleaner theme structure and a more appropriate build system (meson). **This theme is still in development, and this is just a test or preview version for those interested.**
@@ -31,7 +31,7 @@ As stated, this is a test version for the theme. Here is a list of current prior
   - Specific system windows need attention
         - Need to start list of what applications need work
         - Popups in applications (like firefox) are not consistent
-        - Some windows are more opaque due to double layers of backgrounds due to lack of specificiy in some selectors.
+        - Some windows are more opaque due to double layers of backgrounds due to lack of specificity in some selectors.
   - Text cursor is not always visible in light variant of theme
   - Hover/Active/Selected effects are more consistent, but still not complete in all windows
         - Budgie menu and panel do not have proper effects
@@ -45,7 +45,7 @@ As stated, this is a test version for the theme. Here is a list of current prior
         - Hover/Selected/Active effects need attention 
 
 
-**Note: These represent current priority issues;**  This is just the list of priority issues. I have my personal notes that have a list of many other issues I have taken note of. The priority issues represent current issues that I believe will be noticed first by many users, and are ones that specifically would damper functionality of the theme enough to weaken support for development. I'm hoping that clarifying this as a test version will help streamline the process of tracking down and tweaking small issues while I am, or others, are working on some of the larger issues that would directly deture people from using the theme. This also gives people a chance to play with the theme without waiting forever! 
+**Note: These represent current priority issues;**  This is just the list of priority issues. I have my personal notes that have a list of many other issues I have taken note of. The priority issues represent current issues that I believe will be noticed first by many users, and are ones that specifically would damper functionality of the theme enough to weaken support for development. I'm hoping that clarifying this as a test version will help streamline the process of tracking down and tweaking small issues while I am, or others, are working on some of the larger issues that would directly deter people from using the theme. This also gives people a chance to play with the theme without waiting forever! 
 
 
 ## Roadmap and Goals
@@ -66,7 +66,26 @@ As stated, this is a test version for the theme. Here is a list of current prior
     - Instructions (complete)
     - Formatting (continued)
     - Add more organization for development (features, issues, etc.) (continued)
-   8. Begin porting to other environnments
+   8. Begin porting to other environments
+
+**Changes**
+
+- Changes to and more _config options
+   - Budgie Panel regions
+   - Default theme colors chosen
+   - Raven padding added
+   - Formatted _config for easier use
+   - Added margins property
+
+- Theme overhaul
+   - Added more contrast in stacks and lists for readability.
+   - Made margins and paddings much more consistent and clean with the ```$mag``` property.
+   - Fixed some double header issues causing visual bugs with some applications.
+   - Fixed some toolbars.
+
+- Added preparations for Firefox theme
+
+- Fixed spelling mistakes (whoops!)
 
 # Installation 
 
@@ -175,6 +194,27 @@ All user preferences are currently handled in the ```_config.scss ``` file. This
         - ```$corner:18px;``` Sets main window components to 18px
         - ```$incorner: ($corner -10)``` Sets the inner corners to 10 less than the exterior corners. This is to create even borders. If you make the outer corner radii to something smaller than 10, you will have to play with this value to find what you like best.
         - ```btncorner:9999px``` This makes buttons circular. You can mess with this value if you would like non-circular buttons, but it hasn't been tested thoroughly. 
+
+ 7. **Budgie Panel**
+
+   - Budgie panel has three regions. You can hide a background of a region by changing the values in the Budgie section of _config.
+
+      - Ex: ```$start_bot: 1;``` will make the start region (left-most) region of the panel visible.
+
+ 8. **Raven** 
+
+   - Raven now has a setting to add some spacing between the top and bottom panels, giving it a more card like look. 
+
+      - Ex: ```$raven_pad: 1``` is the default padding in the theme. ```$raven_pad: 0``` will remove the padding. 
+      - Any positive integer value should work, but too large of numbers may cause some issues.
+
+ 9. **Layout**
+
+   - Margins of windows and objects can be adjusted with ```$mag```. 
+
+      - Ex: ```$mag: 10px;``` will make theme margins 10px in size. 
+
+      - For best results, make ```$incorner``` be equal to ```$corner-$mag```.
   
 
 ## Community
@@ -184,17 +224,19 @@ Some public and community information. This theme started as a personal project,
 
 I decided on the name of Brightwork Theme. In nautical terms, Brightwork is the polished metalwork on ships. If a desktop is symbolic of a ship, it made sense to me that the theme is analogous to the aesthetic of the ship. My hope is that Brightwork can become a polished theme like the brightwork of a ship.
 
-I want to open the name of this theme to the public. My only hope is that the name remains in the nautical setting. If it is decided to change the name, we will do a public poll on the new name.
+The name is still open to public, but I have not heard a request for any other names so far.
 
 **Feature Request**
 
-One of the large aspects for the vision of the theme was to enable user choice. I having been taking requests already, but I want to make this a more official part of the theme and its development. 
+One of the large aspects for the vision of the theme was to enable user choice. 
+
+To request a feature please submit an issue and tag it as a enhancement. Follow the instructions od the issue template.
 
 **Involvement**
 
-I will be looking for help with the development of this theme. If you are interested, keep following for more details!.
+I will be looking for help with the development of this theme. If you are interested, please reach out or make a pull request.
 
-   * Special thanks: JoshStrobl, JacekJagosz, EbonJaeger, and Staudey for their contributions to the theme already! It has been a big help.
+   * Special thanks: Josh Strobl, JacekJagosz, EbonJaeger, and Staudey for their contributions to the theme already! It has been a big help.
 
 # Brightwork Theme Guidelines (Development)
 This project begun just as something for myself. I had zero experience when I started, so I read a bunch of resources before I begun. One thing that became clear was that a proper guideline determined the success of a theme, ui, or ux. Here are the guidelines I wrote up for myself when I was making this theme for myself that I have adapted for this Readme and the continued development of the theme (These guidelines are a work in progress and open to change as well). 

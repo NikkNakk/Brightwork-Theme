@@ -7,13 +7,15 @@ scss_files =files([
         '_sass/_variables.scss', 
         '_sass/apps/_budgie.scss',
         '_sass/apps/_nautilus.scss',
-        '../../_config.scss',        
+        '../../_config.scss',
+        #'_sass_fox/userChrome.scss', Adding     
 ])
 
 
 subdir('gtk')
 subdir('gtk-dark')
 subdir('assets_sass')
+#subdir('_sass_fox') Adding
 
 install_subdir('assets', install_dir: join_paths(get_option('datadir'), 'themes', 'Brightwork/gtk-3.0')
 ) 

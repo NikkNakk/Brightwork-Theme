@@ -2,100 +2,202 @@
 /* Budgie Panel */
 //////////////////
 
-%region {
+%regionbot {
     border-radius: 26px;
     padding: 0 10px;
     margin-bottom: 4px;
     margin-top: 0px;
 }
 
+%regiontop {
+    border-radius: 26px;
+    padding: 0 5px;
+    margin-bottom: 0px;
+    margin-top: 2px;
+}
 
-.budgie-panel {
 
-    &.background {
-        border-radius: 0px;
-    }
+.budgie-container.bottom {
 
-    &:backdrop {
-        background-color: $bg_color;
-    }
+    .budgie-panel {
 
-    &.transparent {
-        background-color: transparent;
+        &.background {
+            border-radius: 0px;
+        }
 
-        .start-region,
-        .end-region {
+        &:backdrop {
             background-color: $bg_color;
         }
-    }
 
-    .start-region {
+        &.transparent {
+            background-color: transparent;
 
-        @extend %region;
-        margin-left: 5px;
-
-        .icon-tasklist {
-
-            image {
-                margin: 4px 8px;
-                border-radius: 40%;
-                min-height: 16px;
-                min-width: 16px;
-                background-color: rgba($black, $icon_panel_alpha);
+            .start-region{
+                background-color: rgba($bg_color, $start_bot);
             }
 
-            .running {
-
-                image {
-                    background-color: rgba($ps_cool, $icon_panel_alpha);
-                }
-
-                &:checked {
-                    image {
-                        background-color: rgba($ps_warm, $icon_panel_alpha);
-                    }
-                }
+            .center-region {
+                background-color: rgba($bg_color, $center_bot);
             }
-        }
-    }
 
-    .center-region {
-        @extend %region;
-        background-color: transparent;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-
-    .end-region {
-
-        @extend %region;
-        margin-right: 5px;
-    }
-
-
-
-    button {
-        border-radius: 40%;
-
-        &.icon {
-            box-shadow: inset 0px 0px 1px 1px rgba($bg_cool, .6);
+            .end-region {
+                background-color: rgba($bg_color, $end_bot);
+            }
+            
         }
 
-        &:hover box image {
-            color: $ps_color;
+        .start-region {
+
+            @extend %regionbot;
+            margin-left: 5px;
+
         }
-        
-        &.budgie-menu-launcher:hover {
+
+        .center-region {
+            @extend %regionbot;
             background-color: transparent;
-            box-shadow: none;
+            margin-left: 5px;
+            margin-right: 5px;
         }
 
-        &.budgie-menu-launcher:checked {
-            background-color: transparent;
-            box-shadow: none;
+        .end-region {
+
+            @extend %regionbot;
+            margin-right: 5px;
+        }
+
+
+
+        button {
+            border-radius: 40%;
+
+            &.icon {
+                box-shadow: inset 0px 0px 1px 1px rgba($bg_cool, .6);
+            }
+
+            &:hover box image {
+                color: $ps_color;
+            }
+            
+            &.budgie-menu-launcher:hover {
+                background-color: transparent;
+                box-shadow: none;
+            }
+
+            &.budgie-menu-launcher:checked {
+                background-color: transparent;
+                box-shadow: none;
+            }
         }
     }
 }
+
+.budgie-container.top {
+
+    .budgie-panel {
+
+        &.background {
+            border-radius: 0px;
+        }
+
+        &:backdrop {
+            background-color: rgba($bg_cool, 0.7);
+        }
+
+        &.transparent {
+            background-color: transparent;
+
+            .start-region {
+                background-color: rgba($bg_cool, $start_top);
+            }
+
+            .center-region {
+                background-color: rgba($bg_cool, $center_top);
+            }
+
+            .end-region {
+                background-color: rgba($bg_cool, $end_top);
+            }
+        }
+
+        .start-region {
+            @extend %regiontop;
+            margin-left: 5px;
+        }
+
+        .center-region {
+            @extend %regiontop;
+            background-color: transparent;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .end-region {
+
+            @extend %regiontop;
+            margin-right: 5px;
+        }
+
+
+
+        button {
+            border-radius: 40%;
+
+            &.icon {
+                box-shadow: inset 0px 0px 1px 1px rgba($bg_cool, .6);
+            }
+
+            &:hover box image {
+                color: $ps_color;
+            }
+            
+            &.budgie-menu-launcher:hover {
+                background-color: transparent;
+                box-shadow: none;
+            }
+
+            &.budgie-menu-launcher:checked {
+                background-color: transparent;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+.budgie-panel {
+
+    .icon-tasklist {
+
+        image {
+            margin: 4px 8px;
+            border-radius: 40%;
+            min-height: 16px;
+            min-width: 16px;
+            background-color: rgba($black, $icon_panel_alpha);
+        }
+
+        .running {
+
+            image {
+                background-color: rgba($ps_cool, $icon_panel_alpha);
+            }
+
+            &:checked {
+                image {
+                    background-color: rgba($ps_warm, $icon_panel_alpha);
+                }
+            }
+        }
+    }
+
+    separator {
+        background-color:rgba($textbg, 0.5);
+        margin: 5px 2px;
+        border-radius:$btncorner;
+        padding:1px;
+    }
+}
+
 
 ////////////////////////////////////
 /* Budgie Panel Menu and Popovers */
@@ -155,33 +257,40 @@
     &.budgie-menu {
         color: rgba($textbg, 0.6);
         border-color: $pm_warm;
-        border-radius: $corner $corner $corner 10px;
+        border-radius: $corner;
 
         &.background {
             background-color: rgba($pm_warm, 0.97);
             margin: 0px;
-            border-radius: $corner $corner $corner 5px;
+            border-radius: $corner;
         }
 
         .container {
             padding: 0px;
-            margin: 5px;
-            border-radius: $incorner $incorner $incorner 5px;
+            margin: $mag;
+            border-radius: $incorner;
         }
 
         .sidebar {
             border-radius: $incorner 0px 0px $incorner;
-            background-color: transparent;
-            margin-left: 5px;
-            margin-bottom: 5px;
-            margin-top: 5px;
-            margin-right: 5px;
             padding: 0px;
             font-size: 120%;
 
             button {
-                margin: 5px;
+                margin: $mag;
             }
+
+            .frame {
+                background-color:rgba($black, 0.27);
+                border-radius:$incorner;
+                margin:0px;
+    
+                 stack {
+                        background-color:transparent;
+                        margin:0px;
+                    }
+            }
+            
         }
 
         entry {
@@ -197,9 +306,6 @@
         entry.search {
             box-shadow: none;
             font-size: 120%;
-            margin-top: 5px;
-            margin-left: 5px;
-            margin-right: 5px;
             border-style: solid;
             border-width: 0px;
             border-color: #243947;
@@ -207,15 +313,21 @@
             background-blend-mode: darken;
             border-radius: $corner;
             padding: 5px;
+            margin-bottom:$mag;
         }
 
         scrolledwindow {
-            background-color: rgba($black, 0.27);
-            border-radius: $incorner;
-            margin-right: 5px;
-            margin-bottom: 5px;
-            margin-top: 5px;
-            padding: 5px;
+           
+            padding:2px;
+
+            &:last-child {
+
+                &> .frame {
+                    background-color:rgba($black, 0);
+                    border-radius:$incorner;
+
+                }
+            }
         }
     }
 
@@ -275,8 +387,7 @@
 .budgie-settings-window stack {
     background-color: transparent;
     border-radius: $incorner;
-    margin-bottom: 10px;
-    margin-right: 10px;
+
 
     label {
         color: $textfg;
@@ -373,7 +484,7 @@
     :selected image {
     padding:4px;
     background-color:$ps_color;
-    border-radius: $corner;
+    border-radius: $btncorner;
     }
 
     .drop-shadow {
@@ -497,8 +608,10 @@
 
 .raven {
     background-color: $pm_color;
-    border-radius: $corner 0 0 0;
+    border-radius: $corner 0 0 $corner;
     padding: 10px;
+    margin-top:(10px*$raven_pad);
+    margin-bottom:(10px*$raven_pad);
 
 
     ////////////////
