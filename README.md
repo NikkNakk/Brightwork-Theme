@@ -13,9 +13,9 @@ Brightwork started as a personal theme. The original plan was to make a theme fo
      * [Extras](#extra-install-information)
      * [Screenshots](#screenshots)
 * [Customizing](#theme-user-preferences)
-     * [Config File](#instructions-for--configscss)
-     * [Firefox](#firefox-theme)
-* [Community](#public-appearences-stuff)
+     * [Config File](#instructions-for-_configscss)
+     * [Firefox](#Firefox-Theme)
+* [Community](#Community)
 * [Development](#brightwork-theme-guidelines-development)
 <!--te-->
 
@@ -133,10 +133,6 @@ This command completes in less than a second and is more ideal for testing for d
 
 To get the Budgie Panel like the screen shots, in Budgie Settings set the bottom panel to dynamic transparency. The icon backgrounds (which are in my plans to adjust) work best with the dock size around 50.
 
-### Firefox 
-
-Currently I have not adapted the Firefox theme to the new build system. This will be included during a future release.
-
 ## Screenshots
 
 ![Teal_40](https://github.com/NikkNakk/Brightwork-theme/blob/master/teal_40_screenshot.png?raw=true)
@@ -217,7 +213,7 @@ All user preferences are currently handled in the ```_config.scss ``` file. This
 
       - For best results, make ```$incorner``` be equal to ```$corner-$mag```.
 
-##Firefox Theme
+## Firefox Theme
 
 Firefox theme is a modified version of [Material Fox](https://github.com/muckSponge/MaterialFox).
 
