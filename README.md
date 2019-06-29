@@ -14,6 +14,7 @@ Brightwork started as a personal theme. The original plan was to make a theme fo
      * [Screenshots](#screenshots)
 * [Customizing](#theme-user-preferences)
      * [Config File](#instructions-for--configscss)
+     * [Firefox](#firefox-theme)
 * [Community](#public-appearences-stuff)
 * [Development](#brightwork-theme-guidelines-development)
 <!--te-->
@@ -215,6 +216,26 @@ All user preferences are currently handled in the ```_config.scss ``` file. This
       - Ex: ```$mag: 10px;``` will make theme margins 10px in size. 
 
       - For best results, make ```$incorner``` be equal to ```$corner-$mag```.
+
+##Firefox Theme
+
+Firefox theme is a modified version of [Material Fox](https://github.com/muckSponge/MaterialFox).
+
+To install the Firefox theme:
+
+**NOTE** This overwrites userChrome.css in ```/.mozilla/chrome/*.default```. You may want to backup if you have made changes there.
+
+   1. Install Brightwork Theme following install instructions above. 
+
+   2. In ```build``` run ```sudo ninja fox```.
+
+   3. 
+      a. In Firefox [Firefox 69+, about:config] set ```toolkit.legacyUserProfileCustomizations.stylesheets``` to ```true```.
+      b. In Firefox [about:config] set ```svg.context-properties.content.enabled``` to ```true```.
+   
+   4. Restart Firefox.
+
+
   
 
 ## Community
