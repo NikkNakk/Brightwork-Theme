@@ -1,8 +1,12 @@
 # Brightwork Theme
-**Version 0.1.2 (Public Test and Preview Version)**
+**Version 0.2.0 (Public Test and Preview Version 2.0)**
 
 ## Description: 
-Brightwork started as a personal theme. The original plan was to make a theme for my personal use, but after many people expressed their interest I began making a public version. This version is a public test or preview version based on my theme. This version has been converted from my original source to a cleaner theme structure and a more appropriate build system (meson). **This theme is still in development, and this is just a test or preview version for those interested.**
+Brightwork started as a personal theme. The original plan was to make a theme for my personal use,but after many people expressed their interest I began making a public version. This version is public test version 2.
+
+![Brightwork](https://github.com/NikkNakk/Brightwork-theme/blob/master/brightwork_020.png?raw=true) (Wallpaper is The Brig Mercury in Moonlight by Ivan Aivazovsky)
+
+**This theme is still in development, and this is just a test or preview version for those interested.**
 
 <!--ts-->
 * [Priority Issues](#Priority-Issues)
@@ -21,29 +25,23 @@ Brightwork started as a personal theme. The original plan was to make a theme fo
 
 
 ## Priority Issues and Tasks
-As stated, this is a test version for the theme. Here is a list of current priority issues that I have been focusing on.
+As stated, this is a test version for the theme. Here is a list of current priority issues that I am focusing on.
 
 * Meson Build:
-  - Meson build is functional.
-  - Change render command to output progress rather than each line
+  - Change render command to output progress rather than each line (looking for help on this)
   - Add colors and shades as an install option that initiates render command, will depreciate render command as a user input
-  
+
 * Windows: 
-  - Specific system windows need attention
-        - Need to start list of what applications need work
-        - Popups in applications (like firefox) are not consistent
-        - Some windows are more opaque due to double layers of backgrounds due to lack of specificity in some selectors.
-  - Text cursor is not always visible in light variant of theme
-  - Hover/Active/Selected effects are more consistent, but still not complete in all windows
-        - Budgie menu and panel do not have proper effects
-  
+  - Specific windows need more attention
+      - Popups in applications (like firefox) are not consistent
+      - Text cursor is not always visible in light variant of theme
+      - Specific application issues need to be documented and worked on
+
 * System: 
   - Login display manager needs attention
 
-* Budgie: 
-  - Work on Budgie specific functionality (Special thanks to Josh Strobl) 
-        - Budgie panel needs work (issues with icon shapes and autohide)
-        - Hover/Selected/Active effects need attention 
+* Compatability: 
+   - Begin porting theme to other environments (In progress for Solus Gnome)!
 
 
 **Note: These represent current priority issues;**  This is just the list of priority issues. I have my personal notes that have a list of many other issues I have taken note of. The priority issues represent current issues that I believe will be noticed first by many users, and are ones that specifically would damper functionality of the theme enough to weaken support for development. I'm hoping that clarifying this as a test version will help streamline the process of tracking down and tweaking small issues while I am, or others, are working on some of the larger issues that would directly deter people from using the theme. This also gives people a chance to play with the theme without waiting forever! 
@@ -57,36 +55,37 @@ As stated, this is a test version for the theme. Here is a list of current prior
  3. Organize GitHub (continued progress)
  4. Create and begin tracking issues (Continued progress)
     - Begun tracking and completing issues on Github
-    - Need to start application specific lists
+    - Fix issues for specific applications (in progress)
  5. Begin fixing priority issues and updating priority issues list based on user tests and feedback (continued progress)
  6. Complete and update theme design guidelines (continued progress)
-    - I want to ensure there is a proper framework for the theme design
  7. Create and complete resources for GitHub page: 
     - Readme (complete)
     - Update Screenshots 
     - Instructions (complete)
     - Formatting (continued)
     - Add more organization for development (features, issues, etc.) (continued)
-   8. Begin porting to other environments
+ 8. Begin porting to other environments
+    - Porting to Solus Gnome (in progres!)
+    - Port to Solus Mate (not started)
+    - Port to Solus KDE Plasma (not started)
 
 **Changes**
 
-- Changes to and more _config options
-   - Budgie Panel regions
-   - Default theme colors chosen
-   - Raven padding added
-   - Formatted _config for easier use
-   - Added margins property
+- Changes to menus
+   - Modified menus and popovers to have matching margins across the entire theme.
+   - Modified menus and popovers to have matching hover effects across the entire theme.
+   - Modified menu and popover buttons to have consistent shapes and colors across the entire theme.
 
-- Theme overhaul
-   - Added more contrast in stacks and lists for readability.
-   - Made margins and paddings much more consistent and clean with the ```$mag``` property.
-   - Fixed some double header issues causing visual bugs with some applications.
-   - Fixed some toolbars.
+- Changes to Budgie panel
+   - Added hover effects to Budgie menus and popovers
 
-- Added preparations for Firefox theme
+- Button and Assets 
+   - Reduced redundancies in assets svg file (removed extra objects).
+   - Modified all assets to use theme colors for object parts (i.e. slider handle now calls pm_dark).
+   - Streamlined svg format by removing extra transform properties.
+   - Added assets for spinbuttons that are consistent with theme.
 
-- Fixed spelling mistakes (whoops!)
+- Fixed spelling mistakes (again, whoops!)
 
 # Installation 
 
@@ -135,11 +134,14 @@ To get the Budgie Panel like the screen shots, in Budgie Settings set the bottom
 
 ## Screenshots
 
+![Default (Slate_80)](https://github.com/NikkNakk/Brightwork-theme/blob/master/brightwork_020.png?raw=true)
+
+![Default Dark](https://github.com/NikkNakk/Brightwork-theme/blob/master/brightwork_020_dark.png?raw=true)
+
 ![Teal_40](https://github.com/NikkNakk/Brightwork-theme/blob/master/teal_40_screenshot.png?raw=true)
 
 ![Teal Shades](https://github.com/NikkNakk/Brightwork-theme/blob/master/shades_of_teal_screenshot.png?raw=true)
 
-![Dusk_60](https://github.com/NikkNakk/Brightwork-theme/blob/master/dusk_60_screenshot.png?raw=true)
 ![Varieties](https://github.com/NikkNakk/Brightwork-theme/blob/master/variety_screenshot_old.png?raw=true)
 
 # Theme User Preferences

@@ -5,6 +5,11 @@
 
 .nautilus-window {
 
+    .menu { 
+    margin:0px;
+    padding:0px;
+    }
+
     popover {
         color: $textbg;
     }

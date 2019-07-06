@@ -2,12 +2,9 @@
 @import '../../../config';
 
 
-$variant: dark;
-
 //Some colors
 
 $error: $pm_red;
-$asset-suffix: if($variant=='dark', '-dark', '');
 $background-clip-extra: if($variant=='light', padding-box, border-box);
 
 //Global padding

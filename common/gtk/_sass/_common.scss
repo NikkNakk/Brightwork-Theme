@@ -91,7 +91,7 @@ decoration {
 }
 
 :not(.csd).background {
-    //temp fix for standalone windows that cant seem to handle trasnparencies
+    //temp fix for standalone windows that cant seem to handle transparency
     border-radius: 0px;
 }
 
@@ -439,13 +439,16 @@ headerbar,
             (":hover", "-hover"),
             (":active", "-active") {
                 &.#{$k}#{$l} {
-                    background-image: -gtk-scaled(url("assets/titlebutton-#{$k}#{$m}#{$asset-suffix}.png"),
-                    url("assets/titlebutton-#{$k}#{$m}#{$asset-suffix}@2.png"));
+                    background-image: -gtk-scaled(url("assets/titlebutton-#{$k}#{$m}.png"),
+                    url("assets/titlebutton-#{$k}#{$m}@2.png"));
                 }
             }
         }
     }
 }
+
+
+
 
 
 
@@ -612,37 +615,27 @@ menubar,
 }
 
 menu.background {
-    border-radius: $incorner;
+    border-radius: $corner;
 }
 
-.menu.background {
-    border-radius: $incorner;
-}
-
-window .background {
-    border-radius: $incorner;
-
-}
-
-window>.background {
+window > .background {
     background-color: rgba($ps_color, 0.5);
+    border-radius: $corner;
 }
 
 menu,
 .menu {
     background-color: $bg_color;
-    padding: 0;
-    margin: $pad;
-
+    margin: $mag;
 
     &.background {
         border-radius: $corner;
     }
 
     .csd & {
-        padding: $pad 0;
-        border-radius: $incorner $incorner $incorner $incorner;
-
+        padding:$mag;
+        border-radius: $corner;
+        
         &.background {
             border-radius: $corner;
         }
@@ -650,22 +643,22 @@ menu,
 
     separator,
     .csd & separator {
-        margin: 2px 0;
-        background-color: rgba($bg_view, 0.5);
+        margin: 2px;
+        padding: 1px;
+        border-radius:$btncorner;
+        background-color: rgba($textbg, 0.3);
     }
 
     menuitem {
         transition: background-color $duration $ease-out;
+        border-radius: $incorner;
         min-height: 16px;
         min-width: 40px;
         padding: $pad;
         color: $textbg;
-        margin-left: $mag;
-        margin-right: $mag;
 
         &:hover {
             background-color: $ps_color;
-            border-radius: $incorner;
         }
 
         &:disabled {
@@ -687,21 +680,6 @@ menu,
             }
         }
 
-        check,
-        radio {
-            min-height: 16px;
-            min-width: 16px;
-
-            &:dir(ltr) {
-                margin-right: 6px;
-                margin-left: 4px;
-            }
-
-            &:dir(rtl) {
-                margin-left: 6px;
-                margin-right: 4px;
-            }
-        }
     }
 
     >arrow {
@@ -1082,8 +1060,8 @@ $l in ("", ""),
     // load switch troughs from .png files in assets directory
 
     switch#{$k} {
-        background-image: -gtk-scaled(url("assets/switch#{$l}#{$asset_suffix}.png"),
-        url("assets/switch#{$l}#{$asset_suffix}@2.png"));
+        background-image: -gtk-scaled(url("assets/switch#{$l}.png"),
+        url("assets/switch#{$l}@2.png"));
     }
 
     menuitem:hover switch#{$k},
@@ -1094,8 +1072,8 @@ $l in ("", ""),
 
     headerbar switch#{$k},
     .primary-toolbar switch#{$k} {
-        background-image: -gtk-scaled(url("assets/switch#{$l}-header#{$asset_suffix}.png"),
-        url("assets/switch#{$l}-header#{$asset_suffix}@2.png"));
+        background-image: -gtk-scaled(url("assets/switch#{$l}-header.png"),
+        url("assets/switch#{$l}-header@2.png"));
     }
 }
 
@@ -1117,14 +1095,14 @@ $a in ("check", "checkbox"),
         .#{$w}#{$s},
         #{$w}#{$s},
         treeview.#{$w}#{$s} {
-            -gtk-icon-source: -gtk-scaled(url("assets/#{$a}#{$as}#{$asset_suffix}.png"),
-            url("assets/#{$a}#{$as}#{$asset_suffix}@2.png"));
+            -gtk-icon-source: -gtk-scaled(url("assets/#{$a}#{$as}.png"),
+            url("assets/#{$a}#{$as}@2.png"));
         }
 
         .osd,
         %osd_check_radio {
             #{$w}#{$s} {
-                -gtk-icon-source: -gtk-scaled(url("assets/#{$a}#{$as}-dark.png"), url("assets/#{$a}#{$as}-dark@2.png"));
+                -gtk-icon-source: -gtk-scaled(url("assets/#{$a}#{$as}.png"), url("assets/#{$a}#{$as}@2.png"));
             }
         }
 
@@ -1138,6 +1116,13 @@ $a in ("check", "checkbox"),
         }
     }
 }
+
+check,
+radio {
+            min-height: 16px;
+            min-width: 16px;
+            margin:4px;
+       }
 
 //////////////////
 /*  9.Buttons   */
@@ -1221,6 +1206,34 @@ button {
 modelbutton:hover {
     background-color: $ps_color;
     border-radius: $incorner;
+}
+
+//spinbuttons
+
+spinbutton {
+    
+        button {
+        color:transparent;
+        background-repeat:no-repeat;
+        background-position:center center;
+        margin:2px;
+        padding:0px;
+        
+        @each $k in ("up", "down") {
+
+            @each $l, 
+            $m in("", ""),
+            (":hover", "-hover"),
+            (":active", "-selected"),
+            (":disabled", "-insensitive") {
+                &.#{$k}#{$l} {
+                    background-image: -gtk-scaled(url("assets/spin-#{$k}#{$m}.png"),
+                    url("assets/spin-#{$k}#{$m}@2.png"));
+                }
+            }
+
+        }
+    }
 }
 
 //Comboboxes
@@ -1652,13 +1665,9 @@ popover.background {
     }
 }
 
-.maximized,
-.tiled,
 .csd.popup {
-
-    //to avoid square popups when maximized or tiled
     decoration {
-        border-radius: $incorner;
+        border-radius: $corner;
     }
 }
 
