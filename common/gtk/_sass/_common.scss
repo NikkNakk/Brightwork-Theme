@@ -1576,6 +1576,13 @@ treeview.view {
         color: $textbg;
     }
 
+    :selected{
+        background-color:$ps_warm;
+        &:hover {
+        color:$textbg;
+        }
+    }
+
     header {
         color: $textbg;
     }
@@ -1598,16 +1605,6 @@ textview.view {
     padding: $pad;
     margin: $mag;
     color: $textfg
-}
-
-.view {
-    &:selected {
-
-        &,
-        &:focus {
-            @extend %selected;
-        }
-    }
 }
 
 .view,
