@@ -659,7 +659,13 @@
     }
 
     .raven-calendar { // Calendar Widget (Literal GtkCalendar)
-        padding: 4px;
+        padding: 1px;
+        border-radius:$btncorner;
+
+        &:selected {
+            background-color:$ps_color;
+        }
+
     }
 
     .audio-widget { // Audio Widgets
