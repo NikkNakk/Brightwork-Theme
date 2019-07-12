@@ -280,6 +280,12 @@ separator.sidebar {
 .csd headerbar {
     padding: 0 $mag;
     background-color: $bg_color;
+
+    headerbar {
+        //avoid double headerbars
+        background-color: transparent;
+    }
+
 }
 
 headerbar {
@@ -287,11 +293,6 @@ headerbar {
     border-radius: $corner $corner 0 0;
     background-color: $bg_color;
     color: rgba($textbg, 0.5);
-
-    headerbar {
-        //avoid double headerbars
-        background-color: transparent;
-    }
 
     &.titlebar {
         transition: background-color $duration $ease-out, color $duration $ease-out;
@@ -318,11 +319,6 @@ headerbar {
 
     &:backdrop {
         background-color: $bg_cool;
-
-        headerbar {
-            //avoid double headerbars
-            background-color: transparent;
-        }
 
         .maximized &,
         .tiled & {
