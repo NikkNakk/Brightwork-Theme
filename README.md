@@ -27,6 +27,14 @@ Brightwork started as a personal theme. The original plan was to make a theme fo
 ## Priority Issues and Tasks
 As stated, this is a test version for the theme. Here is a list of current priority issues that I am focusing on.
 
+* **GTK2: (High Priority)**
+    - Many applications rely on GTK2 as a fallback, like QT applications. There currently is NO GTK2 for the theme in place.
+    - Will push a temporary GTK2 platform to avoid making applications unfunctional and allow more people to use theme daily. Temporary GTK2 theme will be based on another theme for the time being.
+    - Eventually push a bespoked Brightwork Theme GTK2 platform. 
+
+* KDE Plasma:
+    - Basic outline for KDE so that default color schemes can be created. 
+
 * Meson Build:
   - Change render command to output progress rather than each line (looking for help on this)
   - Add colors and shades as an install option that initiates render command, will depreciate render command as a user input
